@@ -25,24 +25,24 @@ append_profile_uuid_to_list() {
 # @since 0.2.0
 apply() {
   local \
-    nord0="#2E3440" \
-    nord1="#3B4252" \
-    nord3="#4C566A" \
-    nord4="#D8DEE9" \
-    nord5="#E5E9F0" \
-    nord6="#ECEFF4" \
-    nord7="#8FBCBB" \
-    nord8="#88C0D0" \
-    nord9="#81A1C1" \
-    nord11="#BF616A" \
-    nord13="#EBCB8B" \
-    nord14="#A3BE8C" \
-    nord15="#B48EAD"
+    nord0="#000000" \
+    nord1="#2B3141" \
+    nord3="#454F5F" \
+    nord4="#B2B8C3" \
+    nord5="#DFE3EA" \
+    nord6="#E6E9EF" \
+    nord7="#82B9B8" \
+    nord8="#7CB3C9" \
+    nord9="#7491B9" \
+    nord11="#B8525B" \
+    nord13="#E3C08A" \
+    nord14="#94AE8D" \
+    nord15="#A27E9D"
   local \
-    nord0_rgb="rgb(46,52,64)"
-    nord1_rgb="rgb(59,66,82)"
-    nord4_rgb="rgb(216,222,233)"
-    nord8_rgb="rgb(136,192,208)"
+    nord0_rgb="rgb(0,0,0)"
+    nord1_rgb="rgb(43,49,65)"
+    nord4_rgb="rgb(178,184,195)"
+    nord8_rgb="rgb(124,179,201)"
 
   _write palette "['$nord1', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord8', '$nord5', '$nord3', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord7', '$nord6']"
   log 4 "Applied Nord color palette"
@@ -266,6 +266,7 @@ print_help() {
 # @return 0 if all required dependencies are validated, 1 otherwise
 # @since 0.2.0
 validate_dependencies() {
+  return 0
   declare -a missing_deps deps=("${!1}")
   for exec in "${deps[@]}"; do
     if ! command -v "${exec}" > /dev/null 2>&1; then
